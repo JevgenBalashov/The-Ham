@@ -591,18 +591,24 @@ div.images-content__item-img:hover .img-card-icon-wrap{
     transition: opacity 0.8s;
 }
 
-.img-card-icon{
-    display: inline-block;
-    line-height: 40px;
-    height: 40px;
+div.circle {
+    text-align: center;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 1.5px;
     width: 40px;
+    height: 40px;
+    flex-shrink: 0;
     border: 1px solid #18cfab;
     border-radius: 50%;
     color: #18cfab;
     background-color: #e6e3e3;
+    align-items: center;
 }
 
-.img-card-icon:hover{
+div.circle:hover{
     color: #ffffff;
     background-color: #18cfab;
 }
