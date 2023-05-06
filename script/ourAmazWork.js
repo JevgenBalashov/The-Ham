@@ -198,9 +198,10 @@ function imageItemContent(text, datasetValue, path, name) {
         <div class="images-content__item-img">
         <img src="${path}${name}" alt="${text}"/>
         <div class="img-card-icon-wrap">
-          <div class="circle"><span><i class="img-card-icon fas fa-link"></i></span></div>
-          <div class="circle"><span><i class="img-card-icon fas fa-search"></i></span>
-          </div>
+        <div class="circle-wrap">
+          <div class="circle"><i class="img-card-icon fas fa-link"></i></div>
+          <div class="circle"><i class="img-card-icon fas fa-search"></i></div>
+        </div>
           <p class="img-card-title">CREATIVE DESIGN</p>
           <p class="img-card-category">Web Design</p>
         </div>

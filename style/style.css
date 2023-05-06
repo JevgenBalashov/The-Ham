@@ -607,12 +607,19 @@ div.images-content__item-img:hover .img-card-icon-wrap{
     background-color: #18cfab;
 }
 
+div.circle-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 div.circle {
     text-align: center;
     flex-direction: row;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1.5px;
 }
 
 p.img-card-title {
@@ -922,7 +929,6 @@ img.slider-user-foto{
     object-fit: cover;
     cursor: pointer;
 }
-
 
 /* ===FOOTER */
 
