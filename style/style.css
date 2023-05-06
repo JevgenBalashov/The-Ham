@@ -387,39 +387,38 @@ a.info-box-button:hover {
 
 
 /* OUR AMAZING WORK */
-div.portfolio {
-    width: 100%;
-    background-color: #E9EDEF;
+
+div.main-our-work {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 0;
+    background: #e9edef;
 }
 
-div.portfolio-work {
-    width: 1160px;
-    min-height: 1000px;
-    margin: 0 auto;
+div.main-our-work__content {
     text-align: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
-h2.portfolio-title {
+h2.our-work__title {
+    color: #4E4E4E;
     font-weight: 400;
     font-size: 36px;
     line-height: 40px;
-    color: #4E4E4E;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
-
-ul.portfolio-menu-item {
+  
+ul.our-work__images-menu {
+    margin-top: 100px;
     display: flex;
     list-style-type: none;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    margin: 70px 0;
-
 }
-
-li.portfolio-item {
+  
+li.images-menu__item-link {
     position: relative;
     flex: 0 0 160px;
     padding: 28px 0;
@@ -434,147 +433,228 @@ li.portfolio-item {
     transition: border 0.5s, color 0.5s;
 }
 
-li.portfolio-item.active {
+
+li.images-menu__item-link.active,
+li.images-menu__item-link:hover {
     border: 1px solid #18cfab;
     color: #18cfab;
 }
-
-li.portfolio-item:hover {
-    border: 1px solid #18cfab;
-    color: #18cfab;
-    transition: border 0.5s, color 0.5s;
-}
-
-div.work-card-container {
-    width: 1160px;
-    margin: 0 auto;
+  
+div.our-work__images-content {
+    margin: 70px 0;
     display: grid;
     grid-template-columns: repeat(4, 3fr);
 }
 
-a.work-card-link {
-    text-decoration: none;
-    cursor: pointer;
+div.images-content__item {
+    display: grid;
+    grid-template-columns: 285px;
+    grid-template-rows: 205px;
 }
 
-div.work-card {
-    width: 290px;
-    height: 211px;
+div.images-content__item-front,
+div.images-content__item-back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.5s ease;
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+div.images-content__item-front {
+    position: relative;
+    flex: 1 0 285px;
+    height: 205px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .8s ease;
+}
+
+div.images-content__item-back {
+    background: #e1e4e6;
+    transform: perspective(600px) rotateY(180deg);
+}
+
+div.images-content__item-img img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+  
+div.images-content__item-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     position: relative;
 }
 
-img.work-img {
+div.images-content__item-text::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: #18cfab;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+
+div.images-content__item-text::after {
+    content: '';
+    position: absolute;
+    width: 2.7px;
+    height: 70px;
+    background: #18cfab;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+
+div.images-content__item-text:hover::before {
+    width: 100%;
+}
+
+div.images-content__item-text:hover::after {
+    height: 100%;
+}
+
+.button {
+    width: 170px;
+    height: 60px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0px -5px 0px #fff;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.bg-green {
+  background-color: #18cfab;
+}
+
+.btn-green,
+.btn-blue:hover {
+  background-color: #18cfab;
+  transition: background-color 0.5s;
+}
+
+.btn-blue,
+.btn-green:hover {
+  background-color: #00cbf6;
+  transition: background-color 0.5s;
+}
+
+
+.gallery__image-item-disable {
+    display: none;
+}
+
+
+.display-none {
+    display: none;
+}
+
+/* image-content */
+div.img-card-icon-wrap {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+div.images-content__item-img:hover .img-card-icon-wrap{
+    padding-top: 45px;
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-
-button.btn-loadMore {
-    margin-top: 70px;
-    width: 170px;
-    height: 65px;
-    color: #FFFFFF;
-    background-color: #18CFAB;
-    border: none;
-    border-radius: 6px;
-}
-
-button.btn-loadMore:hover {
-    background-color: #00CBF6;
-}
-
-
-div.img-back-card {
+    opacity: 1;
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .8s ease;
-    background-color: #dddedf;
-    border-top: 3px solid #18CFAB;
-}
-
-div.work-card:hover .img-back-card {
-    opacity: 1;
-}
-
-div.back-card-option {
-    width: 100%;
-    height: 45px;
-    margin-top: 45px;
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
+    border-top: 3px solid #18cfab;
+    background-color: #e6e3e3;
     text-align: center;
-    margin-bottom: 35px;
+    transition: opacity 0.8s;
 }
 
-div.img-back-card span {
-    color: #8A8A8A;
-    font-weight: 300;
-    font-size: 12.1518px;
-line-height: 25px;
-}
-
-
-
-h3.back-card-title {
-    color: #18CFAB;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 25px;
-}
-
-
-div.first-circle,
-div.second-circle {
-    width: 43px;
-    height: 43px;
-    border: 1px solid #18CFAB;
+.img-card-icon{
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #18cfab;
     border-radius: 50%;
-    margin: 1.5px;
+    color: #18cfab;
+    background-color: #e6e3e3;
+}
+
+.img-card-icon:hover{
+    color: #ffffff;
+    background-color: #18cfab;
+}
+
+div.circle {
+    text-align: center;
+    flex-direction: row;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-div.second-circle-square {
-    width: 12px;
-    height: 12px;
-    background-color: #18CFAB;
+p.img-card-title {
+    color: #18CFAB;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 30px;
 }
 
-img.circle-img:hover {
-    fill: #ffffff;
-}
-/* 
-div.first-circle:hover {
-    background-color: #18CFAB;
-} */
-
-/* div.second-circle:hover {
-    background-color: #18CFAB;
+p.img-card-category {
+    color: #8A8A8A;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 25px;
 }
 
-div.second-circle-square:hover {
-    background-color: #ffffff;
-} */
+/* animation */
 
+div.loader-animation {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @keyframes arrows {
+    0%,
+    100% {
+      color:#000000;
+      transform: translateY(0);
+    }
+    50% {
+      color: #18CFAB;
+      transform: translateY(20px);
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
+  div.loader-animation span {
+    --delay: 0s;
+    animation: arrows 1s var(--delay) infinite ease-in;
+}
 
 /* ===BREAKING NEWS */
 
@@ -682,7 +762,7 @@ a.news-card-link:hover h3.news-card-title {
 
 div.section-about-people {
     width: 100%;
-    height: 850px;
+    padding-bottom: 100px;
     background: linear-gradient(rgba(0, 0, 0, 0.500), rgb(0, 0, 0, 0.500)), url(../img/backgroundIMG/section-3.jpg);
     background-attachment: fixed;
     background-position: center;
@@ -841,4 +921,40 @@ img.slider-user-foto{
     width: 100%;
     object-fit: cover;
     cursor: pointer;
+}
+
+
+/* ===FOOTER */
+
+div.footer-block {
+    width: 100%;
+    height: 120px;
+    background-color: #22353F;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+div.footer-content {
+    height: 100%;
+    width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.footer-paraghraph {
+    color: #AEAEAE;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+a.footer-link {
+    text-decoration: none;
+}
+
+p.footer-paraghraph span {
+    color: #18CFAB;
 }
